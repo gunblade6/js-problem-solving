@@ -48,3 +48,50 @@ let evenOrNot = (num) => (num % 2 === 0 ? true : false);
 
 // 10- return true if the first number greater than the second number and false otherwise
 let greatOrNot = (first, second) => (first > second ? true : false);
+
+// 11- get the factorial of a given number
+function factorial(num) {
+  let result = 1;
+  if (num > 0) {
+    for (let i = 1; i <= num; i++) {
+      result *= i;
+    }
+  } else if (num === 0) {
+    return 1;
+  } else {
+    return "please enter a non-negative number";
+  }
+  return result;
+}
+
+// 12- return the sum of all positive integers of an array
+let sumThePositive = (arr) =>
+  arr.filter((e) => e > 0).reduce((acc, curr) => acc + curr);
+
+// 13- return the second largest integer in array
+function secondBig(arr) {
+  let nums = arr.filter((e) => e > 0).sort((a, b) => a - b);
+  return nums[nums.length - 2];
+}
+
+// 14- return the first non repeated char in a string
+function nonRepeated(str) {
+  if (str == "") {
+    return "string is empty";
+  }
+  for (let i = 0; i < str.length; i++) {
+    if (str.indexOf(str[i]) == str.lastIndexOf(str[i])) {
+      return str[i];
+    }
+  }
+  return "All characters are repeated";
+}
+
+// 15- return the longest string in array
+function getLongest(arr) {
+  if (arr.length === 0) {
+    return "Array is empty";
+  }
+
+  return arr.reduce((acc, curr) => (curr.length > acc.length ? curr : acc), "");
+}
