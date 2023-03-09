@@ -95,3 +95,26 @@ function getLongest(arr) {
 
   return arr.reduce((acc, curr) => (curr.length > acc.length ? curr : acc), "");
 }
+
+// 16- check if two words are anagrams
+function checkAnagram(str1, str2) {
+  if (str1.length !== str2.length) {
+    return "Not anagrams";
+  }
+
+  return str1.split("").sort().join("") === str2.split("").sort().join("")
+    ? "Anagrams"
+    : "Not anagrams";
+}
+
+// 17- remove duplicates from an array
+let removeDuplicates = (arr) => [...new Set(arr)];
+
+// 18- return new arr with even nums replaced by their half and odd nums with their double
+let oddEven = (arr) => arr.map((e) => (e % 2 === 0 ? e / 2 : e * 2));
+
+// 19- return number of words in a string
+let wordsNum = (str) => str.trim().split(" ").length;
+
+// 20- return the square of a number
+let numSquare = (num) => num * num;
